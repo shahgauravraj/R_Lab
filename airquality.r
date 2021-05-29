@@ -1,0 +1,10 @@
+print(airquality)
+print(dim(airquality))
+print(sapply(airquality, class))
+df <- airquality
+df[is.na(df$Ozone), "Ozone"] <- mean(df$Ozone, na.rm = TRUE)
+df[is.na(df$Solar.R), "Solar.R"] <- mean(df$Solar.R, na.rm = TRUE)
+sum(is.na(df))
+df <- na.omit(df)
+sum(is.na(df))
+print(df)
